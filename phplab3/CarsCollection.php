@@ -1,10 +1,9 @@
 <?php
 
-include "Car.php";
 
 class CarsCollection
 {
-    public array $cars;
+    public array $cars=[];
 
     public function __construct()
     {

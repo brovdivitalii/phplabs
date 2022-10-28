@@ -1,8 +1,13 @@
 <?php
 
-include "Car.php";
-include "CarsCollection.php";
+function myAutoloader($class_name)
+{
+    if (!class_exists($class_name)) {
+        include $class_name . '.php';
+    }
+}
 
+spl_autoload_register('myAutoloader');
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -129,17 +134,22 @@ echo $_SESSION['Cars']->displayCars();
 </form>
 
 <style>
-    body{
+    body {
         background: darkgray;
     }
-    table   {
+
+    table {
         border: aqua 2px solid;
     }
-    td, th{
+
+    td, th {
         text-align: center;
         padding: 10px;
     }
-    tr:hover {background-color: coral;}
+
+    tr:hover {
+        background-color: coral;
+    }
 </style>
 <script>
     function ShowAddForm() {
