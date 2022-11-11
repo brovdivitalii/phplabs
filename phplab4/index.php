@@ -39,7 +39,7 @@ $carCollections = new Collection([$car1,$car2,$car3]);
 $saveCarCollection = new Repository();
 $saveCarCollection->createNewFile('cars');
 $saveCarCollection->storeDataToFile($carCollections, 'cars');
-var_dump(insertInDb($carCollections,$sql));
+var_dump(insertInDb($carCollections,$dbh));
 var_dump($carCollections);
 echo '<br> ------------------ <br>';
 
